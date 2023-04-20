@@ -1,0 +1,221 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  width: 100%;
+  padding: 3vh;
+
+  background-color: black;
+  color: whitesmoke;
+
+  font-family: monospace;
+  text-align: center;
+}
+
+h1 {
+  height: 9vh;
+  
+  font-size: 32px;
+  white-space: nowrap;
+}
+
+textarea {
+  resize: none;
+}
+
+main {
+  min-height: 85vh;
+
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+}
+
+
+/* || USER INFO SECTION */
+
+#user-info-box {
+  min-width: 480px;
+  border-right: 1px solid rgb(142, 142, 142);
+  padding: 0 10px 10px;
+}
+
+.user-info-form {
+  width: 450px;
+  border: 1px solid rgb(142, 142, 142);
+  border-radius: 10px;
+  margin: 10px auto;
+  padding: 10px;
+
+  display: flex;
+  justify-content: center;
+}
+
+.user-info-form:first-child {
+  margin-top: 0;
+}
+
+.user-info-form>div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.user-info-form input {
+  width: 280px;
+  border: 1px solid rgb(142, 142, 142);
+  border-radius: 7px;
+  padding: 6px 10px;
+  margin: 5px 10px;
+
+  background-color: black;
+  color: whitesmoke;
+}
+
+.user-info-form input:focus {
+  outline: none;
+  border: 1px solid rgb(200, 200, 200);
+}
+
+.user-info-form .user-info-btn {
+  width: 80px;
+  margin: 5px 10px;
+  padding: 3px;
+  border: 1px solid rgb(180, 180, 180);
+  border-radius: 3px;
+
+  background-color: rgb(40, 40, 40);
+  color: whitesmoke;
+
+  font-family: inherit;
+  text-decoration: none;
+  text-align: center;
+
+  cursor: pointer;
+}
+
+.user-info-form .user-info-btn:hover {
+  background-color: whitesmoke;
+  color: rgb(40, 40, 40);
+}
+
+.user-info-form .user-info-btn:active {
+  background-color: rgb(200, 200, 200);
+  color: rgb(40, 40, 40);
+}
+
+
+/* || POST INFO SECTION */
+#post-info-box {
+  min-width: 720px;
+  padding: 0 10px 10px;
+}
+
+.post-info-form {
+  width: 690px;
+  margin: 10px auto;
+  padding: 10px;
+  border: 1px solid rgb(142, 142, 142);
+  border-radius: 10px;
+
+  display: flex;
+  justify-content: space-around;
+}
+
+.post-info-form:first-child {
+  margin-top: 0;
+}
+
+.post-info-form>div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: 14px 0;
+}
+
+.post-info-form>div>p {
+  width: 240px;
+  overflow-y: scroll;
+  
+  font-size: 18px;
+  font-weight: bold;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.post-info-form>div>div {
+  display: flex;
+}
+
+.post-info-form>div>div>div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.post-info-form textarea {
+  width: 350px;
+  height: 140px;
+  padding: 12px 10px;
+  border: 1px solid rgb(142, 142, 142);
+  border-radius: 10px;
+
+  background-color: rgb(20, 20, 20);
+  color: whitesmoke;
+
+  font-size: 14px;
+}
+
+.post-info-form textarea:focus {
+  border: 1px solid whitesmoke;
+  outline: none;
+}
+
+.post-info-form>div>div>div>div {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 5px;
+
+  margin: 6px 0;
+}
+
+.post-info-form input {
+  width: 18px;
+  height: 18px;
+}
+
+.post-info-form label {
+  font-size: 14px;
+}
+
+.post-info-form .post-info-btn {
+  width: 100px;
+  margin: 5px 10px;
+  padding: 3px;
+  border: 1px solid rgb(180, 180, 180);
+  border-radius: 3px;
+
+  background-color: rgb(40, 40, 40);
+  color: whitesmoke;
+
+  text-decoration: none;
+  font-family: inherit;
+  text-align: center;
+
+  cursor: pointer;
+}
+
+.post-info-form .post-info-btn:hover {
+  background-color: whitesmoke;
+  color: rgb(40, 40, 40);
+}
+
+.post-info-form .post-info-btn:active {
+  background-color: rgb(200, 200, 200);
+  color: rgb(40, 40, 40);
+}

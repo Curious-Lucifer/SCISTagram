@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sign Up • SCISTagram</title>
+    <link rel="icon" href="/static/images/SCIST_icon.png">
+    <link rel="stylesheet" href="/static/css/user.css">
+  </head>
+  <body>
+    <main>
+      <div class="border-box">
+        <h1 class="signup">SCISTagram</h1>
+        <h2 class="signup">Sign up to see photos and videos from your friends.</h2>
+        <form action="/signup" method="POST">
+          {% if error_msg %}
+          <p class="error-msg">{{ error_msg }}</p>
+          {% endif %}
+          <input name="username" type="text" placeholder="Username">
+          <input name="password" type="password" placeholder="Password">
+          <p id="announcement">
+            People who use our service may have uploaded your contact information to Instagram. <a href="#">Learn More</a>
+            <br>
+            <br>
+            By signing up, you agree to our <a href="#">Terms</a> , <a href="#">Privacy Policy</a> and <a href="#">Cookies Policy</a>.
+          </p>
+          <button type="submit">Sign up</button>
+        </form>
+
+        <div id="seperate-box">
+          <hr>
+          <span>OR</span>
+          <hr>
+        </div>
+
+        <div id="SCISTbook-box" class="signup">
+          <img src="/static/images/SCIST_icon.png" height="18" width="18">
+          <a href="#">Log in with SCISTbook</a>
+        </div>
+      </div>
+
+      <p class="border-box">Don't have an account? <a href="/signup">Sign up</a></p>
+
+      <div id="app-box">
+        <p>Get the app.</p>
+        <a href="#"><img src="/static/images/AppStore_Download.png" height="40" width="136"></a>
+        <a href="#"><img src="/static/images/GooglePlay_Download.png" height="40" width="136"></a>
+      </div>
+    </main>
+
+    <footer>
+      <ul>
+        <li>
+          <a href="https://scist.org">SCIST</a>
+        </li>
+        <li>
+          <a href="https://scist.org">About</a>
+        </li>
+        <li>
+          <a href="https://scist.org">Helps</a>
+        </li>
+        <li>
+          <a href="https://scist.org">Privacy</a>
+        </li>
+        <li>
+          <a href="https://scist.org">Terms</a>
+        </li>
+      </ul>
+
+      <p>&copy; 2023 SCISTagram from Curious</p>
+    </footer>
+  </body>
+</html>

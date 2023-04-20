@@ -1,0 +1,35 @@
+version: '2'
+services:
+  scistagram:
+    container_name: scistagram
+    build: .
+    environment:
+      SECRET_KEY: secret_key
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: mysql_password
+      MYSQL_DATABASE: scistagram_db
+      ADMIN_PASSWORD: admin_password
+      INIT: true
+    depends_on:
+      - mysql
+
+  nginx:
+    image: nginx:stable
+    restart: always
+    volumes:
+      - ./conf/http.conf:/etc/nginx/nginx.conf
+    ports:
+      - 80:80
+    depends_on:
+      - scistagram
+
+  mysql:
+    container_name: mysql
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: mysql_root_password
+      MYSQL_DATABASE: scistagram_db
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: mysql_password
+    volumes:
+      - .data/mysql:/var/lib/mysql

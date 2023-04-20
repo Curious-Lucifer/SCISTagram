@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SCISTagram</title>
+    <link rel="icon" href="/static/images/SCIST_icon.png">
+    <link rel="stylesheet" href="/static/css/admin.css">
+  </head>
+  <body>
+    <h1>Admin Panel</h1>
+
+    <main>
+      <section id="user-info-box">
+        {% for user in user_list %}
+        <form class="user-info-form" action="/admin/user_update" method="POST">
+          <div>
+            <input type="number" name="id" value="{{ user.id }}" hidden>
+            <input type="text" name="username" value="{{ user.username.decode() }}">
+            <input type="password" name="password" placeholder="Password">
+          </div>
+          <div>
+            <button class="user-info-btn" type="submit">Update</button>
+            <a class="user-info-btn" href="/admin/delete/{{ user.id }}">Delete</a>
+          </div>
+        </form>
+        {% endfor %}
+      </section>
+
+      <section id="post-info-box">
+        {% for post_data in post_data_list %}
+        <form class="post-info-form" action="/admin/post_update" method="POST">
+          <input type="number" name="id" value="{{ post_data.id }}" hidden>
+          <textarea name="msg">{{ post_data.post_msg.decode() }}</textarea>
+          <div>
+            <p>Poster : {{ post_data.post_user.decode() }}</p>
+            <div>
+              <div>
+                <div>
+                  <input type="checkbox" name="accept_xss" {% if post_data.accept_xss %}checked{% endif %}>
+                  <label>Accept XSS</label>
+                </div>
+                <div>
+                  <input type="checkbox" name="accept_ssti" {% if post_data.accept_ssti %}checked{% endif %}>
+                  <label>Accept SSTI</label>
+                </div>
+              </div>
+              <div>
+                <button class="post-info-btn" type="submit">Update</button>
+                <a class="post-info-btn" href="/admin/delete_post/{{ post_data.id }}">Delete</a>
+              </div>
+            </div>
+          </div>
+        </form>
+        {% endfor %}
+      </section>
+    </main>
+  </body>
+</html>
